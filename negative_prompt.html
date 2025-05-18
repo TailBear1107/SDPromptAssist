@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>Negative Prompt 編輯器</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer="defer"></script>
+</head>
+<body>
+
+<h1>Negative Prompt 編輯器</h1>
+
+<!-- 類型選擇 -->
+<div class="section">
+  <label for="categorySelect">選擇分類：</label>
+  <select id="categorySelect">
+    <option value="">請選擇</option>
+  </select>
+</div>
+
+<!-- prompt 多選區 -->
+<div class="section" id="promptSelection" style="display:none;">
+  <h2>選擇要用的 Negative Prompts：</h2>
+  <button onclick="selectAllPrompts()">全選</button>
+  <div class="checkbox-group" id="checkboxList"></div>
+</div>
+
+<!-- 權重調整 -->
+<div class="section" id="weightSection" style="display:none;">
+  <h2>從已選擇的項目中挑選要加權重者(可選)：</h2>
+  <h4>建議不要超過5個</h4>
+  <div class="checkbox-group" id="weightCheckboxList"></div>
+  <hr>
+  <div id="weightInputs"></div>
+  <button onclick="generateFinalPrompt()">🚀 產生 Prompt</button>
+</div>
+
+<!-- 生成與複製 -->
+<div class="section" id="resultSection" style="display:none;">
+  <h2>產出結果：</h2>
+  <div class="output-box" id="finalOutput"></div>
+  <button id="copyBtn" onclick="copyResult(this)">📋 複製</button>
+</div>
+
+</body>
+</html>
